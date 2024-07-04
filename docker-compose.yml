@@ -2,10 +2,12 @@ version: '3.8'
 
 services:
   api:
-    image: api
+    build: 
+      context: .
+      dockerfile: Dockerfile
     deploy:
-        mode: replicated
-        replicas: 10
+      mode: replicated
+      replicas: 10
 
   nginx: 
     image: nginx
